@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "markcraft-studio"
+version = "1.0.0"
+description = "AI驱动的轻量级Markdown/HTML智能编辑与多平台发布引擎"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "MarkCraft Studio Team"},
+]
+keywords = ["markdown", "html", "converter", "editor", "publishing", "pdf", "docx"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Text Processing :: Markup",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+web = ["flask>=2.3.0"]
+pdf = ["weasyprint>=59.0"]
+docx = ["python-docx>=0.8.11"]
+png = ["Pillow>=9.0.0"]
+all = [
+    "flask>=2.3.0",
+    "weasyprint>=59.0",
+    "python-docx>=0.8.11",
+    "Pillow>=9.0.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.scripts]
+markcraft = "markcraft.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/gitstq/MarkCraft-Studio"
+Repository = "https://github.com/gitstq/MarkCraft-Studio"
+Issues = "https://github.com/gitstq/MarkCraft-Studio/issues"
+
+[tool.setuptools.packages.find]
+include = ["markcraft*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
