@@ -303,7 +303,7 @@ def cmd_themes(args):
     for preset, colors in ThemeEngine.THEMES.items():
         print(f"{colors['name']:<10} {preset.value:<12} 背景色: {colors['bg']} | 强调色: {colors['accent']}")
 
-    print(f"\n💡 使用方法: markcraft convert input.md -t {ThemePreset.ELEGANT.value}")
+    print(f"\n💡 使用方法: markcraft convert input.md -t elegant")
     print()
 
 
